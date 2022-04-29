@@ -1,5 +1,6 @@
 function Hidden_Number (num: number) {
-    if (num == Random_) {
+    if (0 == Random_) {
+        User_Guess = num
         basic.showString("NICE")
     } else if (num < Random_) {
         basic.showString("HIGHER")
@@ -8,7 +9,7 @@ function Hidden_Number (num: number) {
         basic.showString("LOWER")
         Guesses += 1
     }
-    return Guesses
+    return ""
 }
 input.onButtonPressed(Button.A, function () {
     if (User_Guess > 0) {
@@ -17,16 +18,16 @@ input.onButtonPressed(Button.A, function () {
     }
 })
 input.onButtonPressed(Button.AB, function () {
-    Hidden_Number(User_Guess)
+    basic.showNumber(Hidden_Number(User_Guess))
 })
 input.onButtonPressed(Button.B, function () {
     User_Guess += 1
     basic.showNumber(User_Guess)
 })
 input.onGesture(Gesture.Shake, function () {
-    basic.showNumber(Hidden_Number(Guesses))
+    Hidden_Number(User_Guess)
 })
-let User_Guess = 0
 let Guesses = 0
+let User_Guess = 0
 let Random_ = 0
 Random_ = randint(0, 20)
