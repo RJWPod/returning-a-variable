@@ -23,6 +23,7 @@ function Hidden_Number (num: number) {
         Determiner += -1
         return Tries
     } else if (num == Random_) {
+        User_Guess = 0
         return "NICE"
     } else if (num < Random_) {
         Tries += 1
