@@ -25,10 +25,10 @@ function Hidden_Number (num: number) {
     } else if (num == Random_) {
         return "NICE"
     } else if (num < Random_) {
-        Tries = "" + Tries + 1
+        Tries += 1
         return "HIGHER"
     } else if (num > Random_) {
-        Tries = "" + Tries + 1
+        Tries += 1
         return "LOWER"
     }
     return Tries
